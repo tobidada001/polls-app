@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Consolas', sans-serif;
+  }
+  body{
+    display: grid; 
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #6665ee;
+  }
+
+ #eachpoll{
+   background-color: rgb(190,190,190);
+ }
+
+#polltitle{
+  padding-top: 2em;
+  padding-bottom: 2em;
+  font-size: 1em;
+  font-weight: bolder;
+}
+.ans{
+  width: 100%;
+  align-self: stretch;
+  justify-self: center;
+  font-size: 1em;
+}
+input[type="text"]{
+  padding-left: 1.5em;
+  height: 2.5em;
+}
+.mywrapper{
+  width: 50em;
+  height: 60vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  
+  padding: 1em;
+  grid-row-gap: 0.5em;
+  background-color: transparent;
+}
+
+.btn{
+  height: 40px;
+  width: 90%;
+  justify-self: center;
+}
+

@@ -1,0 +1,3 @@
+* Add an option to ADD POLL and its answers.
+* Allow user to VIEW ALL POLLS Questions
+* Allow user to click the POLL QUESTION and it should load a new page where you will see the Poll question and also its answers.

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  
+  <title>Polls App</title>
+  <link rel="stylesheet" href="{% static "../static/style.css" %}">
+</head>
+<body>
+  
+<div class="mywrapper">
+    <form class="mywrapper" id="form1" method="" action="">
+    <input type="text" name="polltitle" id="polltitle" placeholder="Polltitle"/> 
+
+    <input type="text" placeholder="Answer 1" class="ans" name="answer1"/>
+    <input type="text" placeholder="Answer 2" class="ans" name="answer2"/>
+    <input type="text" placeholder="Answer 3" class="ans" name="answer3">
+    <input type="text" placeholder="Answer 4" class="ans" name="answer4">
+
+    <input type="submit" name="addpoll" class="btn" value="Add poll">
+
+    <input type="submit" name="cancelpoll" onsubmit="cancelpoll" class="btn" value="Cancel">
+        </form>
+</div>
+ 
+
+</body>
+</html>

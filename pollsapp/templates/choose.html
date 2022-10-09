@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  
+  <title>Polls App</title>
+  <link rel="stylesheet" href="{% static "../static/style.css" %}">
+  <style>
+  
+  #main{
+    width: 800px; height: 70vh;  background: rgb(230, 230, 230); display: block;
+    margin-top: 0; overflow-y: auto;}
+  .eachpoll{
+    /* height: 7vh; */
+  }
+  .eachpoll {
+    
+    font: 1.5em sans-serif;
+    margin-left: 3%;
+    padding: .25em;
+  }
+
+  .eachpoll:nth-child(even){
+    background-color: slategrey;
+    
+  }
+  .eachpoll:nth-child(odd){
+    background-color: lightgray;
+    
+  }
+  #add{text-decoration: none; color: black; font-weight: bold; }
+  h1{margin: 0;}
+  #submit{background:  rgb(79, 16, 224);
+border: none; padding: 1.4em;
+float: right; margin: 4em;}
+
+
+  </style>
+</head>
+<body>
+  <h1 style="padding: 5%;">{{poll.title}}</h1>
+  <a href="{% url 'home' %}" id="add">Back to home</a>
+
+    <form id="cont" action="{% url 'details' poll.id %}" method="POST">
+      {% csrf_token %}
+    <div id="main">
+    {% for c in choice %}
+    
+  <div class="eachpoll">
+    <input type="radio" id="choice{{c.id}}" name="yourchoice" value="{{c.id}}" > {{c.choice}}
+  </div>
+  {% endfor %}
+  <input id="submit" type="submit" value="Submit Answer"/>
+ 
+</div>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  
+  <title>Polls App</title>
+  <link rel="stylesheet" href="{% static "../static/style.css" %}">
+  <style>
+  
+  #main{
+    width: 800px; height: 60vh;  background: rgb(230, 230, 230); display: block;
+    margin-top: 0; overflow-y: auto;}
+  .eachpoll{
+    /* height: 7vh; */
+  }
+  .eachpoll a p{
+    
+    font: 1.5em sans-serif;
+    margin-left: 3%;
+    padding: .25em;
+  }
+
+  .eachpoll:nth-child(even){
+    background-color: slategrey;
+    
+  }
+  .eachpoll:nth-child(odd){
+    background-color: lightgray;
+    
+  }
+  #add{text-decoration: none; color: black; font-weight: bold; }
+  h1{margin: 0;}
+  </style>
+</head>
+<body>
+  <h1 style="padding: 5%;">All Poll Questions</h1>
+  <a href="{% url 'add' %}" id="add">Add New Poll</a>
+    <div id="main">
+    {% for poll in polls%}
+  <div class="eachpoll">
+    <a href="{% url 'choose' poll.id %}"><p>{{ poll.title }}</p></a>
+  </div>
+  {% endfor %}
+  
+</div>
+</body>
+</html>
